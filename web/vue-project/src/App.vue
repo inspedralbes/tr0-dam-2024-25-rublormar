@@ -1,16 +1,17 @@
-<script setup>
-// import HelloWorld from './components/HelloWorld.vue'
-// import TheWelcome from './components/TheWelcome.vue'
-import Main from './components/main.vue' 
-</script>
 
 <template>
-  <div>TR0</div>
+  <div>
+    <h1>TR0</h1>
+    <Main />
+  </div>
 </template>
 
-<main>
-  <Main />
-</main>
+
+  <script setup>
+  // import HelloWorld from './components/HelloWorld.vue'
+  // import TheWelcome from './components/TheWelcome.vue'
+  import Main from './components/main.vue' 
+  </script>
 
 <style scoped>
 /* header {

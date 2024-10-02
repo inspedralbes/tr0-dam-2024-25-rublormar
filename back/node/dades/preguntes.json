@@ -1,124 +1,168 @@
 {
-    "preguntes": [
-      {
-        "id": 1,
-        "pregunta": "Quina és la capital de Catalunya?",
-        "respostes": [
-          "Girona",
-          "Tarragona",
-          "Barcelona",
-          "Lleida"
-        ],
-        "resposta_correcta": 2,
-        "imatge": "https://exemple.com/barcelona.jpg"
-      },
-      {
-        "id": 2,
-        "pregunta": "Qui va escriure el llibre 'El Petit Príncep'?",
-        "respostes": [
-          "J.K. Rowling",
-          "Antoine de Saint-Exupéry",
-          "Gabriel García Márquez",
-          "Miguel de Cervantes"
-        ],
-        "resposta_correcta": 1,
-        "imatge": "https://exemple.com/saint-exupery.jpg"
-      },
-      {
-        "id": 3,
-        "pregunta": "Quin és el riu més llarg de Catalunya?",
-        "respostes": [
-          "Llobregat",
-          "Segre",
-          "Ter",
-          "Ebre"
-        ],
-        "resposta_correcta": 3,
-        "imatge": "https://exemple.com/ebre.jpg"
-      },
-      {
-        "id": 4,
-        "pregunta": "Quin any va començar la Guerra Civil Espanyola?",
-        "respostes": [
-          "1936",
-          "1914",
-          "1945",
-          "1923"
-        ],
-        "resposta_correcta": 0,
-        "imatge": "https://exemple.com/guerra-civil.jpg"
-      },
-      {
-        "id": 5,
-        "pregunta": "Quina és la muntanya més alta de Catalunya?",
-        "respostes": [
-          "Puigmal",
-          "Taga",
-          "Pica d'Estats",
-          "Montseny"
-        ],
-        "resposta_correcta": 2,
-        "imatge": "https://exemple.com/pica-estats.jpg"
-      },
-      {
-        "id": 6,
-        "pregunta": "Com es diu l’actual president de la Generalitat de Catalunya (2024)?",
-        "respostes": [
-          "Carles Puigdemont",
-          "Quim Torra",
-          "Pere Aragonès",
-          "Artur Mas"
-        ],
-        "resposta_correcta": 2,
-        "imatge": "https://exemple.com/pere-aragones.jpg"
-      },
-      {
-        "id": 7,
-        "pregunta": "Quin és l'esport més practicat a Catalunya?",
-        "respostes": [
-          "Bàsquet",
-          "Natació",
-          "Tenis",
-          "Futbol"
-        ],
-        "resposta_correcta": 3,
-        "imatge": "https://exemple.com/futbol.jpg"
-      },
-      {
-        "id": 8,
-        "pregunta": "Quin idioma, a part del català, és oficial a Catalunya?",
-        "respostes": [
-          "Francès",
-          "Alemany",
-          "Espanyol",
-          "Portuguès"
-        ],
-        "resposta_correcta": 2,
-        "imatge": "https://exemple.com/espanol.jpg"
-      },
-      {
-        "id": 9,
-        "pregunta": "Quin és el símbol més emblemàtic de Barcelona?",
-        "respostes": [
-          "La Pedrera",
-          "Parc Güell",
-          "Sagrada Família",
-          "Tibidabo"
-        ],
-        "resposta_correcta": 2,
-        "imatge": "https://exemple.com/sagrada-familia.jpg"
-      },
-      {
-        "id": 10,
-        "pregunta": "Qui és el creador del moviment artístic del cubisme?",
-        "respostes": [
-          "Salvador Dalí",
-          "Pablo Picasso",
-          "Joan Miró",
-          "Vincent Van Gogh"
-        ],
-        "resposta_correcta": 1,
-        "imatge": "https://exemple.com/picasso.jpg"
-      }
-    ]
-  }
+  "preguntes": [
+    {
+      "id": 1,
+      "pregunta": "Quina és la capital de Catalunya?",
+      "respostes": [
+        "Girona",
+        "Tarragona",
+        "Barcelona",
+        "Lleida"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "https://exemple.com/barcelona.jpg"
+    },
+    {
+      "id": 2,
+      "pregunta": "Qui va escriure el llibre 'El Petit Príncep'?",
+      "respostes": [
+        "J.K. Rowling",
+        "Antoine de Saint-Exupéry",
+        "Gabriel García Márquez",
+        "Miguel de Cervantes"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "https://exemple.com/saint-exupery.jpg"
+    },
+    {
+      "id": 3,
+      "pregunta": "Quin és el riu més llarg de Catalunya?",
+      "respostes": [
+        "Llobregat",
+        "Segre",
+        "Ter",
+        "Ebre"
+      ],
+      "resposta_correcta": 3,
+      "imatge": "https://exemple.com/ebre.jpg"
+    },
+    {
+      "id": 4,
+      "pregunta": "Quin any va començar la Guerra Civil Espanyola?",
+      "respostes": [
+        "1936",
+        "1914",
+        "1945",
+        "1923"
+      ],
+      "resposta_correcta": 0,
+      "imatge": "https://exemple.com/guerra-civil.jpg"
+    },
+    {
+      "id": 5,
+      "pregunta": "Quina és la muntanya més alta de Catalunya?",
+      "respostes": [
+        "Puigmal",
+        "Taga",
+        "Pica d'Estats",
+        "Montseny"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "https://exemple.com/pica-estats.jpg"
+    },
+    {
+      "id": 6,
+      "pregunta": "Com es diu l’actual president de la Generalitat de Catalunya (2024)?",
+      "respostes": [
+        "Carles Puigdemont",
+        "Quim Torra",
+        "Pere Aragonès",
+        "Artur Mas"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "https://exemple.com/pere-aragones.jpg"
+    },
+    {
+      "id": 7,
+      "pregunta": "Quin és l'esport més practicat a Catalunya?",
+      "respostes": [
+        "Bàsquet",
+        "Natació",
+        "Tenis",
+        "Futbol"
+      ],
+      "resposta_correcta": 3,
+      "imatge": "https://exemple.com/futbol.jpg"
+    },
+    {
+      "id": 8,
+      "pregunta": "Quin idioma, a part del català, és oficial a Catalunya?",
+      "respostes": [
+        "Francès",
+        "Alemany",
+        "Espanyol",
+        "Portuguès"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "https://exemple.com/espanol.jpg"
+    },
+    {
+      "id": 9,
+      "pregunta": "Quin és el símbol més emblemàtic de Barcelona?",
+      "respostes": [
+        "La Pedrera",
+        "Parc Güell",
+        "Sagrada Família",
+        "Tibidabo"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "https://exemple.com/sagrada-familia.jpg"
+    },
+    {
+      "id": 10,
+      "pregunta": "Qui és el creador del moviment artístic del cubisme?",
+      "respostes": [
+        "Salvador Dalí",
+        "Pablo Picasso",
+        "Joan Miró",
+        "Vincent Van Gogh"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "https://exemple.com/picasso.jpg"
+    },
+    {
+      "id": 11,
+      "pregunta": "hola?",
+      "respostes": [
+        "adios",
+        "pedro",
+        "pepe"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "a"
+    },
+    {
+      "pregunta": "eyyyyyyyy?",
+      "respostes": [
+        "a",
+        "b",
+        "c"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 12
+    },
+    {
+      "pregunta": "pppppp?",
+      "respostes": [
+        "dada",
+        "hdjada",
+        "uheu"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 13
+    },
+    {
+      "pregunta": "jndakdmalwmkdaksmd,a?",
+      "respostes": [
+        "dada",
+        "hdjada",
+        "uheu"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 14
+    }
+  ]
+}

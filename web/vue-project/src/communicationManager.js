@@ -8,19 +8,28 @@ export async function getPreguntes() {
     return data;
 }
 
-export async function addPregunta(pregunta){
-    const response = await fetch('http://localhost:3000/preguntes', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(pregunta),
-    });
+export async function addPregunta(pregunta) {
+    console.log("AAAAAAAAAAAAAAA", pregunta);
 
-    if(!response.ok){
-        throw new Error('Network response was not ok');
+    try {
+        const response = await fetch('http://localhost:3000/preguntes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(pregunta),
+        });
+
+        if (!response.ok) {
+            throw new Error('Respuesta del servidor no válida');
+        }
+
+        return await response.json();
+
+    } catch {
+        console.error("Error al añadir pregunta", error);
+        throw error;
+
     }
-
-    return await response.json();
 }
 
