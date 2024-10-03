@@ -48,10 +48,23 @@
       </button>
     </div>
 
+    <div>
+      <button class="btn-action" @click="callgetPythonDatos">Python</button>
+    </div>
+    <div v-if="pythonDatos">
+      <p>{{ pythonDatos }}</p>
+    </div>
+
     <div v-for="pregunta in preguntes" :key="pregunta.id">
       <p>{{ pregunta.pregunta }}</p>
+      <button class="btn-editar" @click="callEditarPregunta">Editar</button>
+      <button class="btn-cancel" @click="callDeletePregunta">Eliminar</button>
       <ul>
-        <li v-for="(resposta, index) in pregunta.respostes" :key="index">
+        <li
+          v-for="(resposta, index) in pregunta.respostes"
+          :key="index"
+          :class="{ 'correct-answer': index === pregunta.resposta_correcta }"
+        >
           {{ resposta }}
         </li>
       </ul>
@@ -61,10 +74,16 @@
 
 <script setup>
 import { reactive, ref, onMounted } from "vue";
-import { getPreguntes, addPregunta } from "../communicationManager.js";
+import {
+  getPreguntes,
+  addPregunta,
+  getPythonDatos,
+} from "../communicationManager.js";
 
 const preguntes = ref([]);
 const buttonCrearPregunta = ref(false);
+const pythonDatos = ref(null);
+const preguntaCorrecta = ref(null);
 
 const preguntaNova = ref({
   pregunta: "",
@@ -88,6 +107,8 @@ const mostrarDatosNovaPregunta = async () => {
 
 const crearPregunta = async () => {
   try {
+    console.log("a");
+
     const novaPregunta = await addPregunta(preguntaNova.value);
     preguntes.value.push(novaPregunta);
     buttonCrearPregunta.value = false;
@@ -95,6 +116,19 @@ const crearPregunta = async () => {
   } catch (error) {
     console.error("Error creant pregunta:", error);
   }
+};
+
+const callgetPythonDatos = async () => {
+  try {
+    pythonDatos.value = await getPythonDatos();
+    console.log("Python Datos:", pythonDatos.value);
+  } catch (error) {
+    console.error("Error fetching python datos:", error);
+  }
+};
+
+const callEditarPregunta = async () => {
+  console.log("Editar pregunta");
 };
 
 const cleanForm = () => {
@@ -116,6 +150,16 @@ div {
   margin: 10px 0;
   padding: 10px 20px;
   background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-editar {
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: green;
   color: white;
   border: none;
   border-radius: 5px;
@@ -147,8 +191,11 @@ ul {
   padding: 0;
 }
 
+.correct-answer {
+  background-color: green;
+}
+
 li {
-  background-color: #f8f9fa;
   margin: 5px 0;
   padding: 10px;
   border: 1px solid #ddd;

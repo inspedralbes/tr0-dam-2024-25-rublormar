@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
+const { spawn } = require('child_process');
 
 const app = express();
 app.use(cors());
@@ -32,7 +33,7 @@ app.post('/preguntes', (req, res) => {
     const idNovaPregunta = json.preguntes.length > 0 ? json.preguntes[json.preguntes.length - 1].id + 1 : 1;
     novaPregunta.id = idNovaPregunta;
 
-    if (!novaPregunta.pregunta || !novaPregunta.respostes || !novaPregunta.resposta_correcta || !novaPregunta.imatge) {
+    if (!novaPregunta.pregunta || !novaPregunta.respostes || !novaPregunta.resposta_correcta) {
         return res.status(400).send('Pregunta invalida');
     }
 
@@ -45,6 +46,47 @@ app.post('/preguntes', (req, res) => {
         }
         res.status(201).send(novaPregunta); // Enviar la nueva pregunta como respuesta
     });
+});
+
+app.put('/editar', (req, res) => {
+    const preguntaEditada = req.body;
+
+    const index = json.preguntes.findIndex(p => p.id === preguntaEditada.id);
+
+    if (index === -1) {
+        return res.status(404).send('Pregunta no encontrada');
+    }
+
+    json.preguntes[index] = preguntaEditada;
+
+    // Escribir de nuevo el archivo JSON
+    fs.writeFile('./dades/preguntes.json', JSON.stringify(json, null, 2), (err) => {
+        if (err) {
+            return res.status(500).send('Error escribiendo el archivo');
+        }
+        res.status(200).send(preguntaEditada); // Enviar la pregunta editada como respuesta
+    });
+});
+
+app.get('/datos', (req, res) => {
+    const process = spawn('py', ['./dades/prueba.py']);
+
+    let pData = '';
+
+    process.stdout.on('data', (data) => {
+        pData = data.toString();
+        console.log(data.toString());
+    });
+
+    process.stderr.on('data', (error) => {
+        console.error(`Error: ${error}`);
+    });
+
+    process.on('close', (code) => {
+        console.log(`Proceso terminado con código ${code}`);
+        res.send(pData);
+    });
+
 });
 
 

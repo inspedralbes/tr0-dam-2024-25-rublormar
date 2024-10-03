@@ -4,14 +4,14 @@
     <h1>TR0</h1>
     <Main />
   </div>
-</template>
+</template>s
 
 
   <script setup>
-  // import HelloWorld from './components/HelloWorld.vue'
-  // import TheWelcome from './components/TheWelcome.vue'
-  import Main from './components/main.vue' 
-  </script>
+// import HelloWorld from './components/HelloWorld.vue'
+// import TheWelcome from './components/TheWelcome.vue'
+import Main from "./components/main.vue";
+</script>
 
 <style scoped>
 /* header {

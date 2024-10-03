@@ -163,6 +163,52 @@
       "resposta_correcta": 2,
       "imatge": "c",
       "id": 14
+    },
+    {
+      "pregunta": "daeasda",
+      "respostes": [
+        "a",
+        "b",
+        "c"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 15
+    },
+    {
+      "pregunta": "daeasda",
+      "respostes": [
+        "a",
+        "b",
+        "c"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 16
+    },
+    {
+      "pregunta": "a",
+      "respostes": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "",
+      "id": 17
+    },
+    {
+      "pregunta": "dadawa",
+      "respostes": [
+        "sdws",
+        "dwds",
+        "dwadafaefas",
+        "fsd"
+      ],
+      "resposta_correcta": 3,
+      "imatge": "",
+      "id": 18
     }
   ]
 }
