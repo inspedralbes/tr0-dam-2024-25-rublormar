@@ -1,73 +1,85 @@
 <template>
-  <div>
-    <div v-if="!buttonCrearPregunta">
-      <button
-        class="btn-action"
-        @click="buttonCrearPregunta = !buttonCrearPregunta"
-      >
-        Crear Pregunta
-      </button>
-    </div>
-    <div v-if="buttonCrearPregunta">
-      <div>
-        <input
-          v-model="preguntaNova.pregunta"
-          placeholder="Pregunta"
-          required
-        />
+  <div class="container-principal">
+    <div class="container-left">
+      <div v-if="!buttonCrearPregunta">
+        <button
+          class="btn-action"
+          @click="buttonCrearPregunta = !buttonCrearPregunta"
+        >
+          Nova Pregunta
+        </button>
+        <button class="btn-action" @click="callgetPythonDatos">
+          Estadistiques
+        </button>
+      </div>
+
+      <div></div>
+      <div v-if="pythonDatos">
+        <p>{{ pythonDatos }}</p>
       </div>
       <div>
-        <input
-          v-for="(resposta, index) in preguntaNova.respostes"
-          :key="index"
-          v-model="preguntaNova.respostes[index]"
-          placeholder="Resposta"
-          required
-        />
+        <div v-for="pregunta in preguntes" :key="pregunta.id">
+          <p>{{ pregunta.pregunta }}</p>
+          <ul>
+            <li
+              v-for="(resposta, index) in pregunta.respostes"
+              :key="index"
+              :class="{
+                'correct-answer': index === pregunta.resposta_correcta,
+              }"
+            >
+              {{ resposta }}
+            </li>
+          </ul>
+          <button class="btn-editar" @click="callEditarPregunta">Editar</button>
+          <button class="btn-cancel" @click="callDeletePregunta">
+            Eliminar
+          </button>
+        </div>
       </div>
-      <select v-model="preguntaNova.resposta_correcta">
-        <option
-          v-for="(resposta, index) in preguntaNova.respostes"
-          :key="index"
-          :value="index"
+    </div>
+    <div class="container-right">
+      <div v-if="buttonCrearPregunta">
+        <div>
+          <input
+            v-model="preguntaNova.pregunta"
+            placeholder="Pregunta"
+            required
+          />
+        </div>
+        <div>
+          <input
+            v-for="(resposta, index) in preguntaNova.respostes"
+            :key="index"
+            v-model="preguntaNova.respostes[index]"
+            placeholder="Resposta"
+            required
+          />
+        </div>
+        <div>
+          <select v-model="preguntaNova.resposta_correcta">
+            <option
+              v-for="(resposta, index) in preguntaNova.respostes"
+              :key="index"
+              :value="index"
+            >
+              {{ index }}
+            </option>
+          </select>
+        </div>
+        <button class="btn-action" @click="mostrarDatosNovaPregunta">
+          Guardar Pregunta
+        </button>
+        <button
+          class="btn-cancel"
+          @click="
+            buttonCrearPregunta = false;
+            cleanForm();
+          "
         >
-          {{ index }}
-        </option>
-      </select>
-      <button class="btn-action" @click="mostrarDatosNovaPregunta">
-        Guardar Pregunta
-      </button>
-      <button
-        class="btn-cancel"
-        @click="
-          buttonCrearPregunta = false;
-          cleanForm();
-        "
-      >
-        Cancelar
-      </button>
-    </div>
-
-    <div>
-      <button class="btn-action" @click="callgetPythonDatos">Python</button>
-    </div>
-    <div v-if="pythonDatos">
-      <p>{{ pythonDatos }}</p>
-    </div>
-
-    <div v-for="pregunta in preguntes" :key="pregunta.id">
-      <p>{{ pregunta.pregunta }}</p>
-      <button class="btn-editar" @click="callEditarPregunta">Editar</button>
-      <button class="btn-cancel" @click="callDeletePregunta">Eliminar</button>
-      <ul>
-        <li
-          v-for="(resposta, index) in pregunta.respostes"
-          :key="index"
-          :class="{ 'correct-answer': index === pregunta.resposta_correcta }"
-        >
-          {{ resposta }}
-        </li>
-      </ul>
+          Cancelar
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -78,12 +90,13 @@ import {
   getPreguntes,
   addPregunta,
   getPythonDatos,
+  editarPregunta,
+  eliminarPregunta,
 } from "../communicationManager.js";
 
 const preguntes = ref([]);
 const buttonCrearPregunta = ref(false);
 const pythonDatos = ref(null);
-const preguntaCorrecta = ref(null);
 
 const preguntaNova = ref({
   pregunta: "",
@@ -127,8 +140,24 @@ const callgetPythonDatos = async () => {
   }
 };
 
-const callEditarPregunta = async () => {
-  console.log("Editar pregunta");
+const callEditarPregunta = async (pregunta) => {
+  try {
+    const preguntaEditada = await editarPregunta(pregunta);
+    const index = pregunta.value.findIndex((p) => p.id === preguntaEditada.id);
+
+    preguntes.value[index] = preguntaEditada;
+  } catch {
+    console.error("Error editant pregunta:", error);
+  }
+};
+
+const callDeletePregunta = async (pregunta) => {
+  try {
+    await eliminarPregunta(pregunta);
+    preguntes.value = preguntes.value.filter((p) => p.id !== pregunta.id);
+  } catch {
+    console.error("Error eliminant pregunta:", error);
+  }
 };
 
 const cleanForm = () => {
@@ -142,6 +171,14 @@ const cleanForm = () => {
 </script>
 
 <style scoped>
+.container-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 0%;
+  width: 100%;
+  margin: 0;
+}
 div {
   margin: 20px;
 }

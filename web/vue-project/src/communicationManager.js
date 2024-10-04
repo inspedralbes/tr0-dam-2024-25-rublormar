@@ -35,8 +35,10 @@ export async function addPregunta(pregunta) {
 }
 
 export async function editarPregunta(pregunta) {
-    try{
-        const response = await fetch('http://localhost:3000/editar', {
+    console.log("preguntaaaaa", pregunta.id);
+
+    try {
+        const response = await fetch('http://localhost:3000/updatePre', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -44,36 +46,38 @@ export async function editarPregunta(pregunta) {
             body: JSON.stringify(pregunta),
         });
 
-        if(!response.ok){
+        if (!response.ok) {
             throw new Error('Respuesta del servidor no válida');
         }
 
         return await response.json();
 
-    }catch{
+    } catch {
         console.error("Error al editar pregunta", error);
         throw error;
     }
 
 }
 
-export async function borrarPregunta(id) {
-    try{
-        const response = await fetch('http://localhost:3000/borrar', {
+export async function eliminarPregunta(id) {
+    try {
+        const response = await fetch('http://localhost:3000/deletePre', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({id}),
+            body: JSON.stringify({ id }),
         });
 
-        if(!response.ok){
+        if (!response.ok) {
             throw new Error('Respuesta del servidor no válida');
+        } else {
+            console.log("borrada");
         }
 
         return await response.json();
 
-    }catch{
+    } catch {
         console.error("Error al borrar pregunta", error);
         throw error;
     }

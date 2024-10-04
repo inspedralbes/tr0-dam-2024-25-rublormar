@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const { spawn } = require('child_process');
+const { callbackify } = require('util');
 
 const app = express();
 app.use(cors());
@@ -27,6 +28,15 @@ app.get('/preguntes', (req, res) => {
     res.send(json.preguntes);
 });
 
+function sobreescribirJSON(json, callback) {
+    fs.writeFile('./dades/preguntes.json', JSON.stringify(json, null, 2), (err) => {
+        if (err) {
+            console.error('Error escribiendo el archivo JSON');
+        }
+    });
+    callback();
+}
+
 app.post('/preguntes', (req, res) => {
     const novaPregunta = req.body;
 
@@ -40,7 +50,7 @@ app.post('/preguntes', (req, res) => {
     json.preguntes.push(novaPregunta);
 
     // Escribir de nuevo el archivo JSON
-    fs.writeFile('./dades/preguntes.json', JSON.stringify(json, null, 2), (err) => {
+    sobreescribirJSON(json, (err) => {
         if (err) {
             return res.status(500).send('Error escribiendo el archivo');
         }
@@ -48,7 +58,7 @@ app.post('/preguntes', (req, res) => {
     });
 });
 
-app.put('/editar', (req, res) => {
+app.put('/updatePre', (req, res) => {
     const preguntaEditada = req.body;
 
     const index = json.preguntes.findIndex(p => p.id === preguntaEditada.id);
@@ -59,14 +69,36 @@ app.put('/editar', (req, res) => {
 
     json.preguntes[index] = preguntaEditada;
 
+
     // Escribir de nuevo el archivo JSON
-    fs.writeFile('./dades/preguntes.json', JSON.stringify(json, null, 2), (err) => {
+    sobreescribirJSON(json, (err) => {
         if (err) {
             return res.status(500).send('Error escribiendo el archivo');
         }
-        res.status(200).send(preguntaEditada); // Enviar la pregunta editada como respuesta
+        res.status(200).send({ id: preguntaEditada.id, ...preguntaEditada }); // Enviar la pregunta editada como respuesta
     });
 });
+
+app.delete('/deletePre', (req, res) => {
+    const id = req.body.id;
+
+    const index = json.preguntes.findIndex(p => p.id === id);
+
+    if (index === -1) {
+        return res.status(404).send('Pregunta no encontrada');
+    }
+
+    json.preguntes.splice(index, 1);
+
+    // Escribir de nuevo el archivo JSON
+    sobreescribirJSON(json, (err) => {
+        if (err) {
+            return res.status(500).send('Error escribiendo el archivo');
+        }
+        res.status(200).send({ id }); // Enviar la pregunta eliminada como respuesta
+    });
+
+})
 
 app.get('/datos', (req, res) => {
     const process = spawn('py', ['./dades/prueba.py']);
@@ -88,7 +120,6 @@ app.get('/datos', (req, res) => {
     });
 
 });
-
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

@@ -1,7 +1,6 @@
 
 <template>
   <div>
-    <h1>TR0</h1>
     <Main />
   </div>
 </template>s

@@ -1,64 +1,16 @@
 {
   "preguntes": [
     {
-      "id": 1,
-      "pregunta": "Quina és la capital de Catalunya?",
+      "pregunta": "a?",
       "respostes": [
-        "Girona",
-        "Tarragona",
-        "Barcelona",
-        "Lleida"
-      ],
-      "resposta_correcta": 2,
-      "imatge": "https://exemple.com/barcelona.jpg"
-    },
-    {
-      "id": 2,
-      "pregunta": "Qui va escriure el llibre 'El Petit Príncep'?",
-      "respostes": [
-        "J.K. Rowling",
-        "Antoine de Saint-Exupéry",
-        "Gabriel García Márquez",
-        "Miguel de Cervantes"
-      ],
-      "resposta_correcta": 1,
-      "imatge": "https://exemple.com/saint-exupery.jpg"
-    },
-    {
-      "id": 3,
-      "pregunta": "Quin és el riu més llarg de Catalunya?",
-      "respostes": [
-        "Llobregat",
-        "Segre",
-        "Ter",
-        "Ebre"
+        "mondongo",
+        "bvava",
+        "cea",
+        "dfada"
       ],
       "resposta_correcta": 3,
-      "imatge": "https://exemple.com/ebre.jpg"
-    },
-    {
-      "id": 4,
-      "pregunta": "Quin any va començar la Guerra Civil Espanyola?",
-      "respostes": [
-        "1936",
-        "1914",
-        "1945",
-        "1923"
-      ],
-      "resposta_correcta": 0,
-      "imatge": "https://exemple.com/guerra-civil.jpg"
-    },
-    {
-      "id": 5,
-      "pregunta": "Quina és la muntanya més alta de Catalunya?",
-      "respostes": [
-        "Puigmal",
-        "Taga",
-        "Pica d'Estats",
-        "Montseny"
-      ],
-      "resposta_correcta": 2,
-      "imatge": "https://exemple.com/pica-estats.jpg"
+      "imatge": "a",
+      "id": 5
     },
     {
       "id": 6,
@@ -209,6 +161,75 @@
       "resposta_correcta": 3,
       "imatge": "",
       "id": 18
+    },
+    {
+      "pregunta": "prueba",
+      "respostes": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "resposta_correcta": 3,
+      "imatge": "",
+      "id": 19
+    },
+    {
+      "pregunta": "dadaw",
+      "respostes": [
+        "adada",
+        "dwab",
+        "cdada"
+      ],
+      "resposta_correcta": 3,
+      "imatge": "c",
+      "id": 20
+    },
+    {
+      "pregunta": "dadadaeasda",
+      "respostes": [
+        "a",
+        "b",
+        "c"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 21
+    },
+    {
+      "pregunta": "dadadaeasda",
+      "respostes": [
+        "a",
+        "b",
+        "c"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 22
+    },
+    {
+      "pregunta": "ada",
+      "respostes": [
+        "dad",
+        "wda",
+        "dwa",
+        "da"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "",
+      "id": 23
+    },
+    {
+      "pregunta": "dada",
+      "respostes": [
+        "wda",
+        "dadsa",
+        "dwad",
+        "dada"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "",
+      "id": 24
     }
   ]
 }
