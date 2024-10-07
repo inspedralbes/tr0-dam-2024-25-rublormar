@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const { spawn } = require('child_process');
-const { callbackify } = require('util');
 
 const app = express();
 app.use(cors());
@@ -12,7 +11,7 @@ const port = 3000;
 
 let json;
 
-fs.readFile('./dades/preguntes.json', 'utf8', (err, data) => {
+fs.readFile('../db/dades.json', 'utf8', (err, data) => {
     if (err) {
         console.error('Error leyendo el archivo JSON');
         return;
@@ -29,12 +28,14 @@ app.get('/preguntes', (req, res) => {
 });
 
 function sobreescribirJSON(json, callback) {
-    fs.writeFile('./dades/preguntes.json', JSON.stringify(json, null, 2), (err) => {
+    fs.writeFile('../db/dades.json', JSON.stringify(json, null, 2), (err) => {
         if (err) {
             console.error('Error escribiendo el archivo JSON');
+            return callback(err);
         }
+        callback(null);
+
     });
-    callback();
 }
 
 app.post('/preguntes', (req, res) => {
@@ -58,7 +59,7 @@ app.post('/preguntes', (req, res) => {
     });
 });
 
-app.put('/updatePre', (req, res) => {
+app.put('/update', (req, res) => {
     const preguntaEditada = req.body;
 
     const index = json.preguntes.findIndex(p => p.id === preguntaEditada.id);
@@ -79,7 +80,7 @@ app.put('/updatePre', (req, res) => {
     });
 });
 
-app.delete('/deletePre', (req, res) => {
+app.delete('/delete', (req, res) => {
     const id = req.body.id;
 
     const index = json.preguntes.findIndex(p => p.id === id);
@@ -101,7 +102,7 @@ app.delete('/deletePre', (req, res) => {
 })
 
 app.get('/datos', (req, res) => {
-    const process = spawn('py', ['./dades/prueba.py']);
+    const process = spawn('py', ['../python/estadistica.py']);
 
     let pData = '';
 

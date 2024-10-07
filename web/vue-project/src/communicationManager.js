@@ -38,7 +38,7 @@ export async function editarPregunta(pregunta) {
     console.log("preguntaaaaa", pregunta.id);
 
     try {
-        const response = await fetch('http://localhost:3000/updatePre', {
+        const response = await fetch('http://localhost:3000/update', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export async function editarPregunta(pregunta) {
 
 export async function eliminarPregunta(id) {
     try {
-        const response = await fetch('http://localhost:3000/deletePre', {
+        const response = await fetch('http://localhost:3000/delete', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ export async function eliminarPregunta(id) {
 
         return await response.json();
 
-    } catch {
+    } catch (error) {
         console.error("Error al borrar pregunta", error);
         throw error;
     }

@@ -3,7 +3,7 @@
   <div>
     <Main />
   </div>
-</template>s
+</template>
 
 
   <script setup>
@@ -11,6 +11,7 @@
 // import TheWelcome from './components/TheWelcome.vue'
 import Main from "./components/main.vue";
 </script>
+
 
 <style scoped>
 /* header {

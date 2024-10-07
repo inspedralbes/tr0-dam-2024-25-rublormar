@@ -8,17 +8,15 @@
         >
           Nova Pregunta
         </button>
-        <button class="btn-action" @click="callgetPythonDatos">
-          Estadistiques
-        </button>
       </div>
+      <button class="btn-action" @click="callgetPythonDatos">
+        Estadistiques
+      </button>
 
       <div></div>
-      <div v-if="pythonDatos">
-        <p>{{ pythonDatos }}</p>
-      </div>
+      <div v-if="pythonDatos"></div>
       <div>
-        <div v-for="pregunta in preguntes" :key="pregunta.id">
+        <div v-for="pregunta in sortedPreguntes" :key="pregunta.id">
           <p>{{ pregunta.pregunta }}</p>
           <ul>
             <li
@@ -85,7 +83,7 @@
 </template>
 
 <script setup>
-import { reactive, ref, onMounted } from "vue";
+import { reactive, ref, onMounted, computed } from "vue";
 import {
   getPreguntes,
   addPregunta,
@@ -120,10 +118,8 @@ const mostrarDatosNovaPregunta = async () => {
 
 const crearPregunta = async () => {
   try {
-    console.log("a");
-
     const novaPregunta = await addPregunta(preguntaNova.value);
-    preguntes.value.push(novaPregunta);
+    preguntes.value.push(novaPregunta); // Añadir al final del array
     buttonCrearPregunta.value = false;
     cleanForm();
   } catch (error) {
@@ -168,6 +164,11 @@ const cleanForm = () => {
     imatge: "",
   };
 };
+
+// Computed property to sort questions
+const sortedPreguntes = computed(() => {
+  return [...preguntes.value].sort((a, b) => b.id - a.id);
+});
 </script>
 
 <style scoped>

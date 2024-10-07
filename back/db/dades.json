@@ -1,30 +1,6 @@
 {
   "preguntes": [
     {
-      "pregunta": "a?",
-      "respostes": [
-        "mondongo",
-        "bvava",
-        "cea",
-        "dfada"
-      ],
-      "resposta_correcta": 3,
-      "imatge": "a",
-      "id": 5
-    },
-    {
-      "id": 6,
-      "pregunta": "Com es diu l’actual president de la Generalitat de Catalunya (2024)?",
-      "respostes": [
-        "Carles Puigdemont",
-        "Quim Torra",
-        "Pere Aragonès",
-        "Artur Mas"
-      ],
-      "resposta_correcta": 2,
-      "imatge": "https://exemple.com/pere-aragones.jpg"
-    },
-    {
       "id": 7,
       "pregunta": "Quin és l'esport més practicat a Catalunya?",
       "respostes": [
@@ -230,6 +206,18 @@
       "resposta_correcta": 2,
       "imatge": "",
       "id": 24
+    },
+    {
+      "pregunta": "michi",
+      "respostes": [
+        "guauguau",
+        "beeeee",
+        "muuuuuuu",
+        "shdakda"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "",
+      "id": 25
     }
   ]
 }
