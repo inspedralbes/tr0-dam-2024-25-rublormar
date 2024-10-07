@@ -29,7 +29,9 @@
               {{ resposta }}
             </li>
           </ul>
-          <button class="btn-editar" @click="callEditarPregunta">Editar</button>
+          <button class="btn-editar" @click="callEditarPregunta(pregunta)">
+            Editar
+          </button>
           <button class="btn-cancel" @click="callDeletePregunta">
             Eliminar
           </button>
@@ -37,27 +39,57 @@
       </div>
     </div>
     <div class="container-right">
+      <div v-if="editarPreguntaData.pregunta">
+        <div>
+          <input v-model="editarPreguntaData.pregunta" />
+        </div>
+        <div>
+          <input
+            v-for="(resposta, index) in editarPreguntaData.respostes"
+            :key="index"
+            v-model="editarPreguntaData.respostes[index]"
+            placeholder="Resposta"
+          />
+        </div>
+        <div>
+          <select v-model="editarPreguntaData.resposta_correcta">
+            <option
+              v-for="(resposta, index) in editarPreguntaData.respostes"
+              :key="index"
+              :value="index"
+            >
+              {{ index }}
+            </option>
+          </select>
+        </div>
+        <button class="btn-action" @click="guardarPreguntaEditada">
+          Guardar Cambios
+        </button>
+        <button class="btn-cancel" @click="editarPreguntaData = {}">
+          Cancelar
+        </button>
+      </div>
       <div v-if="buttonCrearPregunta">
         <div>
           <input
-            v-model="preguntaNova.pregunta"
+            v-model="preguntaNovaData.pregunta"
             placeholder="Pregunta"
             required
           />
         </div>
         <div>
           <input
-            v-for="(resposta, index) in preguntaNova.respostes"
+            v-for="(resposta, index) in preguntaNovaData.respostes"
             :key="index"
-            v-model="preguntaNova.respostes[index]"
+            v-model="preguntaNovaData.respostes[index]"
             placeholder="Resposta"
             required
           />
         </div>
         <div>
-          <select v-model="preguntaNova.resposta_correcta">
+          <select v-model="preguntaNovaData.resposta_correcta">
             <option
-              v-for="(resposta, index) in preguntaNova.respostes"
+              v-for="(resposta, index) in preguntaNovaData.respostes"
               :key="index"
               :value="index"
             >
@@ -96,7 +128,14 @@ const preguntes = ref([]);
 const buttonCrearPregunta = ref(false);
 const pythonDatos = ref(null);
 
-const preguntaNova = ref({
+const preguntaNovaData = ref({
+  pregunta: "",
+  respostes: ["", "", "", ""],
+  resposta_correcta: 0,
+  imatge: "",
+});
+
+const editarPreguntaData = reactive({
   pregunta: "",
   respostes: ["", "", "", ""],
   resposta_correcta: 0,
@@ -112,13 +151,13 @@ onMounted(async () => {
 });
 
 const mostrarDatosNovaPregunta = async () => {
-  console.log("Pregunta Nova:", preguntaNova.value);
+  console.log("Pregunta Nova:", preguntaNovaData.value);
   await crearPregunta();
 };
 
 const crearPregunta = async () => {
   try {
-    const novaPregunta = await addPregunta(preguntaNova.value);
+    const novaPregunta = await addPregunta(preguntaNovaData.value);
     preguntes.value.push(novaPregunta); // Añadir al final del array
     buttonCrearPregunta.value = false;
     cleanForm();
@@ -136,15 +175,35 @@ const callgetPythonDatos = async () => {
   }
 };
 
-const callEditarPregunta = async (pregunta) => {
-  try {
-    const preguntaEditada = await editarPregunta(pregunta);
-    const index = pregunta.value.findIndex((p) => p.id === preguntaEditada.id);
+const callEditarPregunta = (pregunta) => {
+  console.log("preguntaaaaaaaaaaa!", pregunta);
 
-    preguntes.value[index] = preguntaEditada;
-  } catch {
+  editarPreguntaData.pregunta = pregunta.pregunta;
+  editarPreguntaData.respostes = [...pregunta.respostes];
+  editarPreguntaData.resposta_correcta = pregunta.resposta_correcta;
+  editarPreguntaData.imatge = pregunta.imatge || "";
+};
+
+const guardarPreguntaEditada = async () => {
+  try {
+    console.log("Pregunta Editada:", editarPreguntaData);
+    const preguntaEditada = await editarPregunta(editarPreguntaData);
+    const index = preguntes.value.findIndex((p) => p.id === preguntaEditada.id);
+
+    if (index !== -1) {
+      preguntes.value[index] = preguntaEditada;
+    }
+    cleanEditarPreguntaData();
+  } catch (error) {
     console.error("Error editant pregunta:", error);
   }
+};
+
+const cleanEditarPreguntaData = () => {
+  editarPreguntaData.pregunta = "";
+  editarPreguntaData.respostes = ["", "", "", ""];
+  editarPreguntaData.resposta_correcta = 0;
+  editarPreguntaData.imatge = "";
 };
 
 const callDeletePregunta = async (pregunta) => {
@@ -157,7 +216,7 @@ const callDeletePregunta = async (pregunta) => {
 };
 
 const cleanForm = () => {
-  preguntaNova.value = {
+  preguntaNovaData.value = {
     pregunta: "",
     respostes: ["", "", "", ""],
     resposta_correcta: 0,

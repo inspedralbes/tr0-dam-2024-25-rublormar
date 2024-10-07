@@ -208,15 +208,15 @@
       "id": 24
     },
     {
-      "pregunta": "michi",
+      "pregunta": "a",
       "respostes": [
-        "guauguau",
-        "beeeee",
-        "muuuuuuu",
-        "shdakda"
+        "a",
+        "b",
+        "res",
+        "fhsjfs"
       ],
-      "resposta_correcta": 1,
-      "imatge": "",
+      "resposta_correcta": 3,
+      "imatge": "a",
       "id": 25
     }
   ]
