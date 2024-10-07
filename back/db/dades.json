@@ -1,0 +1,223 @@
+{
+  "preguntes": [
+    {
+      "id": 7,
+      "pregunta": "Quin és l'esport més practicat a Catalunya?",
+      "respostes": [
+        "Bàsquet",
+        "Natació",
+        "Tenis",
+        "Futbol"
+      ],
+      "resposta_correcta": 3,
+      "imatge": "https://exemple.com/futbol.jpg"
+    },
+    {
+      "id": 8,
+      "pregunta": "Quin idioma, a part del català, és oficial a Catalunya?",
+      "respostes": [
+        "Francès",
+        "Alemany",
+        "Espanyol",
+        "Portuguès"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "https://exemple.com/espanol.jpg"
+    },
+    {
+      "id": 9,
+      "pregunta": "Quin és el símbol més emblemàtic de Barcelona?",
+      "respostes": [
+        "La Pedrera",
+        "Parc Güell",
+        "Sagrada Família",
+        "Tibidabo"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "https://exemple.com/sagrada-familia.jpg"
+    },
+    {
+      "id": 10,
+      "pregunta": "Qui és el creador del moviment artístic del cubisme?",
+      "respostes": [
+        "Salvador Dalí",
+        "Pablo Picasso",
+        "Joan Miró",
+        "Vincent Van Gogh"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "https://exemple.com/picasso.jpg"
+    },
+    {
+      "id": 11,
+      "pregunta": "hola?",
+      "respostes": [
+        "adios",
+        "pedro",
+        "pepe"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "a"
+    },
+    {
+      "pregunta": "eyyyyyyyy?",
+      "respostes": [
+        "a",
+        "b",
+        "c"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 12
+    },
+    {
+      "pregunta": "pppppp?",
+      "respostes": [
+        "dada",
+        "hdjada",
+        "uheu"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 13
+    },
+    {
+      "pregunta": "jndakdmalwmkdaksmd,a?",
+      "respostes": [
+        "dada",
+        "hdjada",
+        "uheu"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 14
+    },
+    {
+      "pregunta": "daeasda",
+      "respostes": [
+        "a",
+        "b",
+        "c"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 15
+    },
+    {
+      "pregunta": "daeasda",
+      "respostes": [
+        "a",
+        "b",
+        "c"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 16
+    },
+    {
+      "pregunta": "a",
+      "respostes": [
+        "a",
+        "a",
+        "a",
+        "a"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "",
+      "id": 17
+    },
+    {
+      "pregunta": "dadawa",
+      "respostes": [
+        "sdws",
+        "dwds",
+        "dwadafaefas",
+        "fsd"
+      ],
+      "resposta_correcta": 3,
+      "imatge": "",
+      "id": 18
+    },
+    {
+      "pregunta": "prueba",
+      "respostes": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "resposta_correcta": 3,
+      "imatge": "",
+      "id": 19
+    },
+    {
+      "pregunta": "dadaw",
+      "respostes": [
+        "adada",
+        "dwab",
+        "cdada"
+      ],
+      "resposta_correcta": 3,
+      "imatge": "c",
+      "id": 20
+    },
+    {
+      "pregunta": "dadadaeasda",
+      "respostes": [
+        "a",
+        "b",
+        "c"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 21
+    },
+    {
+      "pregunta": "dadadaeasda",
+      "respostes": [
+        "a",
+        "b",
+        "c"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "c",
+      "id": 22
+    },
+    {
+      "pregunta": "ada",
+      "respostes": [
+        "dad",
+        "wda",
+        "dwa",
+        "da"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "",
+      "id": 23
+    },
+    {
+      "pregunta": "dada",
+      "respostes": [
+        "wda",
+        "dadsa",
+        "dwad",
+        "dada"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "",
+      "id": 24
+    },
+    {
+      "pregunta": "michi",
+      "respostes": [
+        "guauguau",
+        "beeeee",
+        "muuuuuuu",
+        "shdakda"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "",
+      "id": 25
+    }
+  ]
+}
