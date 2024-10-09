@@ -44,7 +44,7 @@ app.post('/preguntes', (req, res) => {
     const idNovaPregunta = json.preguntes.length > 0 ? json.preguntes[json.preguntes.length - 1].id + 1 : 1;
     novaPregunta.id = idNovaPregunta;
 
-    if (!novaPregunta.pregunta || !novaPregunta.respostes || !novaPregunta.resposta_correcta) {
+    if (!novaPregunta.pregunta || !novaPregunta.respostes || 3 < novaPregunta.resposta_correcta || novaPregunta.resposta_correcta < 0) {
         return res.status(400).send('Pregunta invalida');
     }
 

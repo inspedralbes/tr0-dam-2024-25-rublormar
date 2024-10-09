@@ -139,85 +139,133 @@
       "id": 18
     },
     {
-      "pregunta": "prueba",
+      "pregunta": "dadada",
       "respostes": [
-        "1",
-        "2",
-        "3",
-        "4"
+        "kjdajd",
+        "kdjakwa",
+        "dakjdkaw",
+        "jdkajdada"
       ],
-      "resposta_correcta": 3,
+      "resposta_correcta": 2,
       "imatge": "",
       "id": 19
     },
     {
-      "pregunta": "dadaw",
+      "pregunta": "new pregunta",
       "respostes": [
-        "adada",
-        "dwab",
-        "cdada"
-      ],
-      "resposta_correcta": 3,
-      "imatge": "c",
-      "id": 20
-    },
-    {
-      "pregunta": "dadadaeasda",
-      "respostes": [
-        "a",
-        "b",
-        "c"
-      ],
-      "resposta_correcta": 2,
-      "imatge": "c",
-      "id": 21
-    },
-    {
-      "pregunta": "dadadaeasda",
-      "respostes": [
-        "a",
-        "b",
-        "c"
-      ],
-      "resposta_correcta": 2,
-      "imatge": "c",
-      "id": 22
-    },
-    {
-      "pregunta": "ada",
-      "respostes": [
-        "dad",
-        "wda",
-        "dwa",
-        "da"
+        "jda",
+        "jdadwa",
+        "dakda",
+        "dakda"
       ],
       "resposta_correcta": 1,
       "imatge": "",
+      "isNew": true,
+      "id": 20
+    },
+    {
+      "pregunta": "second new Pregunta",
+      "respostes": [
+        "jdajkdha",
+        "dkandak",
+        "kdakmda",
+        "damkda"
+      ],
+      "resposta_correcta": 3,
+      "imatge": "",
+      "isNew": true,
+      "id": 21
+    },
+    {
+      "pregunta": "new pregunta 3",
+      "respostes": [
+        "jhdajd",
+        "jdjanda",
+        "dkamdak",
+        "dkamdkam"
+      ],
+      "resposta_correcta": 3,
+      "imatge": "",
+      "isNew": true,
+      "id": 22
+    },
+    {
+      "pregunta": "kjdad",
+      "respostes": [
+        "kdmakdmak",
+        "mdk",
+        "mkmd",
+        "kmdk"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "",
+      "isNew": true,
       "id": 23
     },
     {
-      "pregunta": "dada",
+      "pregunta": "kwqdqmk",
       "respostes": [
-        "wda",
-        "dadsa",
-        "dwad",
-        "dada"
+        "mkdmkqm",
+        "kmk",
+        "mkm",
+        "km"
       ],
       "resposta_correcta": 2,
       "imatge": "",
+      "isNew": true,
       "id": 24
     },
     {
-      "pregunta": "a",
+      "pregunta": "pedro",
       "respostes": [
-        "a",
-        "b",
-        "res",
-        "fhsjfs"
+        "lda",
+        "ldada",
+        "mdakmda",
+        "mdak"
+      ],
+      "resposta_correcta": 1,
+      "imatge": "",
+      "isNew": true,
+      "id": 25
+    },
+    {
+      "pregunta": "dajkda",
+      "respostes": [
+        "kdmakdam",
+        "kdamd",
+        "abracadabra",
+        "kdmakda"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "",
+      "isNew": true,
+      "id": 26
+    },
+    {
+      "id": 27,
+      "pregunta": "fabian es tonto?",
+      "respostes": [
+        "si",
+        "maybednada",
+        "correcto",
+        "afirmativo"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "",
+      "isNew": true
+    },
+    {
+      "pregunta": "kjdakjd",
+      "respostes": [
+        "kdamwkm",
+        "mdkamw",
+        "kmdakmda",
+        "dawa"
       ],
       "resposta_correcta": 3,
-      "imatge": "a",
-      "id": 25
+      "imatge": "",
+      "isNew": true,
+      "id": 28
     }
   ]
 }

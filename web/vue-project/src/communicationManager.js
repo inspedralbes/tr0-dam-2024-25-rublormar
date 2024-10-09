@@ -1,5 +1,7 @@
+let ruta = 'http://localhost:3000';
+
 export async function getPreguntes() {
-    const response = await fetch('http://localhost:3000/preguntes');
+    const response = await fetch(`${ruta}/preguntes`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -12,7 +14,7 @@ export async function addPregunta(pregunta) {
     console.log("AAAAAAAAAAAAAAA", pregunta);
 
     try {
-        const response = await fetch('http://localhost:3000/preguntes', {
+        const response = await fetch(`${ruta}/preguntes`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,18 +29,17 @@ export async function addPregunta(pregunta) {
 
         return await response.json();
 
-    } catch {
+    } catch (error) {
         console.error("Error al añadir pregunta", error);
         throw error;
-
     }
 }
 
 export async function editarPregunta(pregunta) {
-    console.log("preguntaaaaa", pregunta.id);
+    console.log("preguntaaaaa", pregunta, pregunta.id);
 
     try {
-        const response = await fetch('http://localhost:3000/update', {
+        const response = await fetch(`${ruta}/update`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -61,7 +62,7 @@ export async function editarPregunta(pregunta) {
 
 export async function eliminarPregunta(id) {
     try {
-        const response = await fetch('http://localhost:3000/delete', {
+        const response = await fetch(`${ruta}/delete`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -85,7 +86,7 @@ export async function eliminarPregunta(id) {
 
 export async function getPythonDatos() {
     try {
-        const responsePy = await fetch('http://localhost:3000/datos');
+        const responsePy = await fetch(`${ruta}/datos`);
 
         if (!responsePy.ok) {
             throw new Error('Network response was not ok');

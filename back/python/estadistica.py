@@ -1,8 +1,9 @@
 import json
-route='../db/dades.json'
+
+route='../db/dades.json' # ruta al archivo JSON 
 
 with open(route) as file:
-    data = json.load(file)
+    data = json.load(file) # carga el archivo JSON
 
 for pregunta in data['preguntes']:
     print(pregunta['pregunta'])
