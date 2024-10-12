@@ -266,6 +266,32 @@
       "imatge": "",
       "isNew": true,
       "id": 28
+    },
+    {
+      "pregunta": "dajd",
+      "respostes": [
+        "kda",
+        "nkdand",
+        "nkdanda",
+        "nkdada"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "",
+      "isNew": true,
+      "id": 29
+    },
+    {
+      "pregunta": "que dia es hoy?",
+      "respostes": [
+        "hdaj",
+        "kdakld",
+        "jddkaj",
+        "jdajk"
+      ],
+      "resposta_correcta": 2,
+      "imatge": "",
+      "isNew": true,
+      "id": 30
     }
   ]
 }

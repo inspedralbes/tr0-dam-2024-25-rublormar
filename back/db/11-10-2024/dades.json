@@ -1,0 +1,113 @@
+{
+  "dades": {
+    "totalIntentosPartida": 50,
+    "totalPreguntasCorrectas": 0
+  },
+  "dadesPreguntes": [
+    {
+      "id": 26,
+      "intentos": 2,
+      "correctas": 0
+    },
+    {
+      "id": 20,
+      "intentos": 3,
+      "correctas": 0
+    },
+    {
+      "id": 11,
+      "intentos": 3,
+      "correctas": 0
+    },
+    {
+      "id": 21,
+      "intentos": 3,
+      "correctas": 0
+    },
+    {
+      "id": 16,
+      "intentos": 3,
+      "correctas": 0
+    },
+    {
+      "id": 27,
+      "intentos": 3,
+      "correctas": 0
+    },
+    {
+      "id": 23,
+      "intentos": 4,
+      "correctas": 0
+    },
+    {
+      "id": 19,
+      "intentos": 3,
+      "correctas": 0
+    },
+    {
+      "id": 9,
+      "intentos": 2,
+      "correctas": 0
+    },
+    {
+      "id": 12,
+      "intentos": 3,
+      "correctas": 0
+    },
+    {
+      "id": 8,
+      "intentos": 3,
+      "correctas": 0
+    },
+    {
+      "id": 10,
+      "intentos": 1,
+      "correctas": 0
+    },
+    {
+      "id": 28,
+      "intentos": 3,
+      "correctas": 0
+    },
+    {
+      "id": 14,
+      "intentos": 1,
+      "correctas": 0
+    },
+    {
+      "id": 29,
+      "intentos": 2,
+      "correctas": 0
+    },
+    {
+      "id": 24,
+      "intentos": 2,
+      "correctas": 0
+    },
+    {
+      "id": 7,
+      "intentos": 3,
+      "correctas": 0
+    },
+    {
+      "id": 18,
+      "intentos": 1,
+      "correctas": 0
+    },
+    {
+      "id": 22,
+      "intentos": 3,
+      "correctas": 0
+    },
+    {
+      "id": 13,
+      "intentos": 1,
+      "correctas": 0
+    },
+    {
+      "id": 17,
+      "intentos": 1,
+      "correctas": 0
+    }
+  ]
+}
